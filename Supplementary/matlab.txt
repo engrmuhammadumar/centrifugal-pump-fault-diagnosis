@@ -1,0 +1,50 @@
+% Specify the source and destination folders
+sourceFolder = 'E:\Pepeline Dataset\CWT Gas_18Bar\Non Leak\channel1';
+destinationFolder = 'E:\Pepeline Dataset\Gray Scale CWT Gas_18Bar\Non Leak Gas_18Bar\channel1';
+
+% Create the destination folder if it doesn't exist
+if ~exist(destinationFolder, 'dir')
+    mkdir(destinationFolder);
+end
+
+% Get a list of all files in the source folder with the specified extensions
+imageFiles = dir(fullfile(sourceFolder, '*.png')); % Adjusted to '*.png' to correctly match PNG files
+fprintf('Found %d files in the source folder.\n', length(imageFiles));
+
+% Loop through each file and convert to grayscale
+for k = 1:length(imageFiles)
+    % Get the full path of the image file
+    baseFileName = imageFiles(k).name;
+    fullFileName = fullfile(sourceFolder, baseFileName);
+    
+    % Read the image
+    try
+        originalImage = imread(fullFileName);
+    catch ME
+        fprintf('Failed to read %s: %s\n', fullFileName, ME.message);
+        continue;
+    end
+
+    % Check if the image is already grayscale or not
+    if size(originalImage, 3) == 3
+        % Convert the image to grayscale
+        grayImage = rgb2gray(originalImage);
+    else
+        % If the image is already grayscale, just use it as is
+        grayImage = originalImage;
+    end
+
+    % Save the grayscale image to the destination folder
+    destinationFileName = fullfile(destinationFolder, baseFileName);
+    try
+        imwrite(grayImage, destinationFileName);
+    catch ME
+        fprintf('Failed to write %s: %s\n', destinationFileName, ME.message);
+        continue;
+    end
+
+    % Display progress
+    fprintf('Processed %s\n', baseFileName);
+end
+
+disp('All images have been converted to grayscale and saved.');
