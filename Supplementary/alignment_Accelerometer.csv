@@ -1,0 +1,6 @@
+class,sensors,Accelerometer_folder,Accelerometer_count,aligned_ids,aligned_first10
+Circumferential Crack,Accelerometer,E:\Upwork Project\AI_Leak_Detection_Project\images\cwt_log\Accelerometer\Looped\Circumferential Crack,250,250,"001,002,003,004,005,006,007,008,009,010"
+Gasket Leak,Accelerometer,E:\Upwork Project\AI_Leak_Detection_Project\images\cwt_log\Accelerometer\Looped\Gasket Leak,250,250,"001,002,003,004,005,006,007,008,009,010"
+Longitudinal Crack,Accelerometer,E:\Upwork Project\AI_Leak_Detection_Project\images\cwt_log\Accelerometer\Looped\Longitudinal Crack,250,250,"001,002,003,004,005,006,007,008,009,010"
+No-leak,Accelerometer,E:\Upwork Project\AI_Leak_Detection_Project\images\cwt_log\Accelerometer\Looped\No-leak,250,250,"001,002,003,004,005,006,007,008,009,010"
+Orifice Leak,Accelerometer,E:\Upwork Project\AI_Leak_Detection_Project\images\cwt_log\Accelerometer\Looped\Orifice Leak,250,250,"001,002,003,004,005,006,007,008,009,010"
